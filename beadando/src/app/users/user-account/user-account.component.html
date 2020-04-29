@@ -1,0 +1,18 @@
+<mat-card>
+  Felhasználói adatok:
+  <br>
+  Felhasználónév: {{this.userService.currentUser.userName}}
+  <form #userForm="ngForm">
+    <mat-form-field>
+      <textarea matInput type="password" name="newPassword1" ngModel required #newPassword1="ngModel" placeholder="Új jelszó megint"></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <textarea matInput type="password" name="newPassword2" ngModel required #newPassword2="ngModel" placeholder="Új jelszó megint"></textarea>
+    </mat-form-field>
+    <br>
+    <button color="primary" mat-raised-button type="button" [disabled]="userForm.invalid" (click)="changePassword(userForm)">Jelszó megváltoztatása</button>
+    <br>
+    <button color="secondary" mat-raised-button type="button" (click)="deleteAccount()">Felhasználó törlése</button>
+  </form>
+</mat-card>

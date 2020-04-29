@@ -9,18 +9,24 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {HttpClientModule} from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { AppComponent } from './app.component';
-import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { HeaderComponent } from './header/header.component';
-import { PostListComponent } from './posts/post-list/post-list.component';
+import { StudentAddComponent } from './students/student-add/student-add.component';
+import { StudentListComponent } from './students/student-list/student-list.component';
+import { UserLoginComponent } from './users/user-login/user-login.component';
+import { UserAccountComponent } from './users/user-account/user-account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostCreateComponent,
     HeaderComponent,
-    PostListComponent
+    StudentAddComponent,
+    StudentListComponent,
+    UserLoginComponent,
+    UserAccountComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,9 @@ import { PostListComponent } from './posts/post-list/post-list.component';
     MatFormFieldModule,
     MatButtonModule,
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

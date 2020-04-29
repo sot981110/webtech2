@@ -1,0 +1,10 @@
+mat-from-field, textarea{
+  width: 100%;
+}
+
+mat-card{
+  margin-top: 10px;
+  margin:auto;
+  width:20%;
+}
+

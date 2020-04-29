@@ -1,0 +1,27 @@
+<mat-card>
+  <form (submit) = "onAddStudent(studentForm)" #studentForm="ngForm">
+    <input type="hidden" name="_id" #_id="ngModel" ngModel>
+    <mat-form-field>
+      <textarea matInput type="text" name="name" ngModel required #name="ngModel" placeholder="Tanuló neve"></textarea>
+      <mat-error *ngIf="name.invalid">A tanuló neve kötelező szöveg.</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <textarea matInput type="text" name="department" ngModel required #department="ngModel" placeholder="Tanuló szakja"></textarea>
+      <mat-error *ngIf="name.invalid">A tanuló szakja kötelező szöveg</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <textarea matInput type="number" name="current" ngModel min=1 max=12 #current="ngModel" placeholder="Tanuló jelenlegi félévszáma"></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <textarea matInput type="number" name="admission" ngModel required min=2000 max=2021 #admission="ngModel" placeholder="Tanuló beiratkozási éve"></textarea>
+      <mat-error *ngIf="name.invalid">A tanuló beiratkozási éve egy kötelező szám</mat-error>
+    </mat-form-field>
+    <br>
+    <button color="primary" mat-raised-button type="submit" [disabled]="studentForm.invalid">Tanuló mentése</button>
+    <button color="secondary" mat-raised-button type="button" (click)="onReset(studentForm)">Reset</button>
+  </form>
+</mat-card>
+

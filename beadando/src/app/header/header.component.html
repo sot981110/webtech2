@@ -1,3 +1,6 @@
 <mat-toolbar color="primary">
-  My App
+  Tanulói adatbázis
+  <div style="width:100%"></div>
+  <div *ngIf="this.userService.currentIsValidated">Bejelentkezve mint: {{this.userService.currentUser.userName}}</div>
+  <div *ngIf="this.userService.currentIsValidated"><button color="secondary" mat-raised-button type="button" (click)="this.userService.logOut()">Kijelentkezés</button></div>
 </mat-toolbar>

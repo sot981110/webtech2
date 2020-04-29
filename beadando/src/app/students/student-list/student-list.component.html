@@ -1,0 +1,18 @@
+
+<mat-card>
+  <button color="secondary" mat-raised-button type="button" (click)="onUpdate()">Frissítés</button>
+<mat-accordion multi="true" *ngIf="this.studentService.getStudents().length > 0">
+  <mat-expansion-panel *ngFor="let student of this.studentService.getStudents()">
+    <mat-expansion-panel-header>{{student.name}}</mat-expansion-panel-header>
+    <p>Diák idje: {{student._id}}</p>
+    <p>Diák neve: {{student.name}}</p>
+    <p>Diák szakja {{student.department}}</p>
+    <p>Diák jelenlegi féléve: {{student.currentTerm}}</p>
+    <p>Diák felvételi éve: {{student.admissionYear}}</p>
+    <button color="primary" mat-raised-button type="button" (click)="deleteStudent(student)">Törlés</button>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<p class="info-set mat-body-1" *ngIf="this.studentService.getStudents().length == 0">Nem találhatóak diákok</p>
+</mat-card>
+

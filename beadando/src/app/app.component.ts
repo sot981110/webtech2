@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import {Post} from './posts/post-model';
+import { UserService } from './users/user.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +7,9 @@ import {Post} from './posts/post-model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  storedPosts : Post[] = [];
 
-  onPostCreated(post){
-    this.storedPosts.push(post);
+  constructor(public userService : UserService){
+
   }
+
 }

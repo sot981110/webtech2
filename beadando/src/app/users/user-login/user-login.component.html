@@ -1,0 +1,16 @@
+<mat-card>
+  <form #userForm="ngForm">
+    <mat-form-field>
+      <textarea matInput type="text" name="name" ngModel required #name="ngModel" placeholder="Felhasználó neve:"></textarea>
+      <mat-error *ngIf="name.invalid">A felhasználónevet kötelező megadni</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <textarea matInput type="password" name="password" ngModel required #password="ngModel" placeholder="Felhasználó jelszava"></textarea>
+      <mat-error *ngIf="name.invalid">A jelszavat kötelező megadni</mat-error>
+    </mat-form-field>
+    <br>
+    <button color="primary" mat-raised-button type="button" [disabled]="userForm.invalid" (click)="onLogin(userForm)">Bejelentkezés</button>
+    <button color="primary" mat-raised-button type="button" [disabled]="userForm.invalid" (click)="onRegister(userForm)">Regisztráció</button>
+  </form>
+</mat-card>

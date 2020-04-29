@@ -1,5 +1,7 @@
 <app-header></app-header>
 <main>
-  <app-post-create (postCreated)="onPostCreated($event)"></app-post-create>
-  <app-post-list [posts]="storedPosts"></app-post-list>
+  <app-user-login *ngIf="!this.userService.currentIsValidated"></app-user-login>
+  <app-student-add *ngIf="this.userService.currentIsValidated"></app-student-add>
+  <app-student-list *ngIf="this.userService.currentIsValidated"></app-student-list>
+  <app-user-account *ngIf="this.userService.currentIsValidated"></app-user-account>
 </main>
