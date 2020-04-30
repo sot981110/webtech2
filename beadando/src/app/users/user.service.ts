@@ -16,10 +16,10 @@ export class UserService {
   };
   currentIsValidated : boolean = false;
 
-  readonly loginUrl = "http://192.168.1.175:3000/users/login";
-  readonly registerUrl = "http://192.168.1.175:3000/users/register";
-  readonly newPasswordUrl = "http://192.168.1.175:3000/users/newPassword";
-  readonly unRegisterUrl = "http://192.168.1.175:3000/users/unRegister";
+  readonly loginUrl = "http://localhost:3000/users/login";
+  readonly registerUrl = "http://localhost:3000/users/register";
+  readonly newPasswordUrl = "http://localhost:3000/users/newPassword";
+  readonly unRegisterUrl = "http://localhost:3000/users/unRegister";
 
   constructor(private http : HttpClient, private snackBar : MatSnackBar) { }
 

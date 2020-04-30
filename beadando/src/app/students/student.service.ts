@@ -12,9 +12,9 @@ export class StudentService {
   selectedStudent : Student;
   students : Student[];
 
-  readonly listStudentsUrl = 'http://192.168.1.175:3000/students/list';
-  readonly newStudentUrl = 'http://192.168.1.175:3000/students/new';
-  readonly deleteUrlBase = 'http://192.168.1.175:3000/students/';
+  readonly listStudentsUrl = 'http://localhost:3000/students/list';
+  readonly newStudentUrl = 'http://localhost:3000/students/new';
+  readonly deleteUrlBase = 'http://localhost:3000/students/';
 
   constructor(private http : HttpClient, private snackBar : MatSnackBar) {
     this.updateStudents();
